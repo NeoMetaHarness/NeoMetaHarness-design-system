@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "mode": "local_only_no_actions",
+  "set_by": "user",
+  "set_on": "2026-11-17",
+  "inherited_from": "BrowserHarness/BrowserHarness-Progress-Memory/machine/github-guardrails.json",
+  "policy": "docs/policies/GITHUB-SAFETY-GUARDRAILS.md",
+  "actions": {
+    "allowed": false,
+    "workflows_may_be_created": false
+  },
+  "github_api": {
+    "max_write_operations_per_task": 20,
+    "cross_repo_human_review_threshold": 3,
+    "circuit_breaker_statuses": [403, 429],
+    "stop_on_suspension_language": true,
+    "automatic_retry_after_circuit_breaker": false
+  },
+  "pages": {"commercial_production_default_allowed": false},
+  "runtime_routes": {
+    "source_control": "github",
+    "agents_and_automation": "local",
+    "tests_and_evals": "local",
+    "upstream_sync": "local (scripts/upstream.mjs)",
+    "development": "local"
+  }
+}
